@@ -8,6 +8,10 @@ body {
   padding: 2rem;
 }
 
+.render + * {
+  font-family: 'Overpass', sans-serif;
+}
+
 section:not([id]) {
   margin: 1em 0;
   padding: 0.5em 0;

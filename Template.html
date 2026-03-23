@@ -75,7 +75,7 @@
 }
 </code></pre>
 
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <a class="button-nav" href="#">Navigation</a>
 
       </section>
@@ -102,7 +102,7 @@
   text-decoration: none;
 }</code></pre>
 
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <a class="link" href="#">In-text link</a>
 
       </section>
@@ -130,7 +130,7 @@
   background-color: #7AB0FF;
 }</code></pre>
 
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <button class="button-submit" type="submit">Submit</button>
       </section>
 
@@ -156,7 +156,7 @@
   box-shadow: 0 0 5px #5890FF;
 }</code></pre>
 
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <input class="text-input" type="text" placeholder="Enter text here">
       </section>
 
@@ -182,7 +182,7 @@
   font-size: 2.5rem;
 }</code></pre>
         
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <h1 class="headings">Heading Example</h1>
       </section>
 
@@ -200,8 +200,14 @@
   font-size: 1rem;
 }</code></pre>
 
-        <h3>Rendered element:</h3>
-        <p class="paragraph">My name is sunwoo, and I like peripherals.</p>
+        <h3 class="render">Rendered element:</h3>
+        <p class="paragraph">
+          My name is sunwoo, and I like peripherals. I am a gamer person who 
+          loves to eat food and play games. I am a very nice person, and I am 
+          always willing to help others. I am a very good friend, and I am 
+          always there for my friends when they need me. I am a very loyal 
+          person, and I will always be there for my friends no matter what.
+        </p>
       </section>
 
       <section>
@@ -215,8 +221,6 @@
         <pre><code>.bulleted-list {
   list-style-type: disc;
   padding-left: 2em;
-  color: #7AB0FF;
-  text-shadow: 0 0 4px #242424, 0 0 8px #5890FF22;
 }
 
 .bulleted-list li {
@@ -227,10 +231,9 @@
 .bulleted-list li::marker {
   color: #5890FF;
   font-size: 1.1em;
-  text-shadow: 0 0 6px #5890FF55;
 }</code></pre>
         
-        <h3>Rendered element:</h3>
+        <h3 class="render">Rendered element:</h3>
         <ul class="bulleted-list"><li>Item 1</li><li>Item 2</li></ul>
       </section>
 
@@ -240,7 +243,21 @@
         <p>.numbered-list</p>
         <h3>Sample code:</h3>
         <code>&lt;ol class="numbered-list"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ol&gt;</code>
-        <h3>Rendered element:</h3>
+        <pre><code>.numbered-list {
+  list-style-type: decimal;
+  padding-left: 2em;
+}
+
+.numbered-list li {
+  margin-bottom: 0.4em;
+  position: relative;
+}
+
+.numbered-list li::marker {
+  color: #5890FF;
+  font-size: 1.1em;
+}</code></pre>
+        <h3 class="render">Rendered element:</h3>
         <ol class="numbered-list"><li>Item 1</li><li>Item 2</li></ol>
       </section>
 
