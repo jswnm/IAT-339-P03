@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <title>Style Guide P03</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Overpass:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <h1>Style Guide P03</h1>
+
+    <p>A template you can use to start building out your own style guides with.</p>
+
+
+    <nav>
+      
+      <p>
+        Go to:
+        <a href="#interactive_elements">Interactive Elements</a>,
+        <a href="#text_elements">Text Elements</a>,
+        <a href="#combined_elements">Combined Elements</a>,
+      </p>
+
+    </nav>
+
+
+
+    <!-- INTERACTIVE ELEMENTS SECTION // -->
+    <section id="interactive_elements">
+
+      <!-- Default Button styling section -->
+      <section>
+
+        <h2>Navigation Button</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.button-nav</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;a href="#" class="button-nav"&gt;Navigation&lt;/a&gt;</code>
+        <pre><code>.button-nav {
+  color: #5890FF;
+  background: none;
+  border: none;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+}
+
+.button-nav::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: #5890FF;
+  transition: width 0.3s ease;
+}
+
+.button-nav:hover::after, .button-nav:focus::after {
+  width: 100%;
+}
+</code></pre>
+
+        <h3>Rendered element:</h3>
+        <a class="button-nav" href="#">Navigation</a>
+
+      </section>
+
+      <section>
+
+        <h2>In-text link</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.link</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;a href="#" class="link"&gt;In-text link&lt;/a&gt;</code>
+        <pre><code>.link {
+  color: #5890FF;
+  text-decoration: underline;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.link:hover, .link:focus {
+  color: #7AB0FF;
+  text-shadow: 0 0 10px #5890FF, 0 0 20px #5890FF;
+  text-decoration: none;
+}</code></pre>
+
+        <h3>Rendered element:</h3>
+        <a class="link" href="#">In-text link</a>
+
+      </section>
+
+      <section>
+
+        <h2>Submit/Reset Buttons</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.button-submit</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;button type="submit" class="button-submit"&gt;Submit&lt;/button&gt;</code>
+        <pre><code>.button-submit {
+  background-color: #5890FF;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-submit:hover, .button-submit:focus {
+  background-color: #7AB0FF;
+}</code></pre>
+
+        <h3>Rendered element:</h3>
+        <button class="button-submit" type="submit">Submit</button>
+      </section>
+
+      <section>
+        <h2>Text Input Field</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.text-input</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;input type="text" class="text-input" placeholder="Enter text here"&gt;</code>
+        <pre><code>.text-input {
+  padding: 0.5em;
+  border: 1px solid #333;
+  border-radius: 0.25em;
+  background-color: #3D3D3D;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.text-input:focus, .text-input:active {
+  border: 1.5px solid #5890FF;
+  box-shadow: 0 0 5px #5890FF;
+}</code></pre>
+
+        <h3>Rendered element:</h3>
+        <input class="text-input" type="text" placeholder="Enter text here">
+      </section>
+
+    </section>
+    <!-- // INTERACTIVE ELEMENTS SECTION -->
+
+
+
+    <!-- TEXT ELEMENTS SECTION // -->
+    <section id="text_elements">
+
+      <section>
+        <h2>Headings</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.headings</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;h1 class="headings"&gt;Heading Example&lt;/h1&gt;</code>
+        <pre><code>.headings {
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 100;
+  font-size: 2.5rem;
+}</code></pre>
+        
+        <h3>Rendered element:</h3>
+        <h1 class="headings">Heading Example</h1>
+      </section>
+
+      <section>
+        <h2>Paragraphs</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.paragraph</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;p class="paragraph"&gt;Paragraph Example&lt;/p&gt;</code>
+        <pre><code>.paragraph {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}</code></pre>
+
+        <h3>Rendered element:</h3>
+        <p class="paragraph">My name is sunwoo, and I like peripherals.</p>
+      </section>
+
+      <section>
+        <h2>Bulleted Lists</h2>
+
+        <h3>CSS selector:</h3>
+        <p>.bulleted-list</p>
+
+        <h3>Sample code:</h3>
+        <code>&lt;ul class="bulleted-list"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;</code>
+        <pre><code>.bulleted-list {
+  list-style-type: disc;
+  padding-left: 2em;
+  color: #7AB0FF;
+  text-shadow: 0 0 4px #242424, 0 0 8px #5890FF22;
+}
+
+.bulleted-list li {
+  margin-bottom: 0.4em;
+  position: relative;
+}
+
+.bulleted-list li::marker {
+  color: #5890FF;
+  font-size: 1.1em;
+  text-shadow: 0 0 6px #5890FF55;
+}</code></pre>
+        
+        <h3>Rendered element:</h3>
+        <ul class="bulleted-list"><li>Item 1</li><li>Item 2</li></ul>
+      </section>
+
+      <section>
+        <h2>Numbered Lists</h2>
+        <h3>CSS selector:</h3>
+        <p>.numbered-list</p>
+        <h3>Sample code:</h3>
+        <code>&lt;ol class="numbered-list"&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ol&gt;</code>
+        <h3>Rendered element:</h3>
+        <ol class="numbered-list"><li>Item 1</li><li>Item 2</li></ol>
+      </section>
+
+    </section>
+    <!-- // TEXT ELEMENTS SECTION -->
+
+
+
+    <!-- COMBINED ELEMENTS SECTION // -->
+    <section id="combined_elements">
+
+      <section>
+        <h2>Main Navigation</h2>
+      </section>
+
+      <section>
+        <h2>Product Listing</h2>
+      </section>
+
+    </section>
+    <!-- // COMBINED ELEMENTS SECTION -->
+
+    <!-- BRANDING SECTION // -->
+    <section id="branding">
+
+      <section>
+        <h2>Typeface</h2>
+      </section>
+
+      <section>
+        <h2>Color Palette</h2>
+      </section>
+
+    </section>
+    <!-- // BRANDING SECTION -->
+
+  </body>
+</html>
