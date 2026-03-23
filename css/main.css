@@ -129,21 +129,32 @@ code {
   TEXT ELEMENTS -------------------
 */
 
-.headings {
-  font-family: 'Audiowide', sans-serif;
-  font-weight: 100;
+.h1 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 800;
   font-size: 2.5rem;
+  color: #5890FF;
+}
+
+.h2 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.h3 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .paragraph {
   font-family: 'Overpass', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
   font-size: 1rem;
+  line-height: 1.6;
+  width: 80%;
 }
-
-/* 
-  COMBINED ELEMENTS -------------------
-*/
 
 .bulleted-list {
   list-style-type: disc;
@@ -174,3 +185,32 @@ code {
   color: #5890FF;
   font-size: 1.1em;
 }
+
+/* 
+  COMBINED ELEMENTS -------------------
+*/
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+iframe {
+  margin-bottom: 1.5rem;
+}
+
+.project-analysis {
+  border-left: 4px solid #5890FF;
+  border-radius: 0.5em;
+  padding: 1.5em 2em;
+  margin: 2em 0;
+  box-shadow: 0 2px 16px 0 #10162288;
+  color: #cbe6ff;
+  font-family: 'Overpass', sans-serif;
+  position: relative;
+}
+
+.project-analysis p {
+  margin-bottom: 1em;
+}
+

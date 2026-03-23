@@ -175,15 +175,31 @@
         <p>.headings</p>
 
         <h3>Sample code:</h3>
-        <code>&lt;h1 class="headings"&gt;Heading Example&lt;/h1&gt;</code>
-        <pre><code>.headings {
-  font-family: 'Audiowide', sans-serif;
-  font-weight: 100;
+        <code>&lt;h1 class="h1"&gt;Heading Example&lt;/h1&gt;</code>
+        <pre><code>.h1 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 800;
   font-size: 2.5rem;
-}</code></pre>
+  color: #5890FF;
+}
+
+.h2 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+}
+
+.h3 {
+  font-family: 'Overpass', sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+</code></pre>
         
         <h3 class="render">Rendered element:</h3>
-        <h1 class="headings">Heading Example</h1>
+        <h1 class="h1">Heading 1</h1>
+        <h2 class="h2">Heading 2</h2>
+        <h3 class="h3">Heading 3</h3>
       </section>
 
       <section>
@@ -271,10 +287,58 @@
 
       <section>
         <h2>Main Navigation</h2>
+
+        <!-- Navbar preview -->
+        <nav>
+          <a class="button-nav" href="#">Home</a>
+          <a class="button-nav" href="#">Projects</a>
+          <a class="button-nav" href="#">About</a>
+          <a class="button-nav" href="#">Links</a>
+        </nav>
       </section>
 
       <section>
-        <h2>Product Listing</h2>
+        <h2>Project Component</h2>
+
+        <!-- Project showcase preview -->
+        <h1 class="h2">Logitech X2 Superstrike Review</h1>
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube.com/embed/zpQeYUnSdfw?si=NY6Y3e7A58x7otJI" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
+          gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+
+        <h3 class="h3">Project Analysis</h3>
+
+        <div class="project-analysis">
+          <p class="paragraph">
+            This project is a YouTube review of the Logitech X2 Superstrike, 
+            focused on evaluating its performance, design, and overall value for users. 
+            The goal was to create an informative yet engaging video that balances 
+            technical analysis with clear, accessible communication. This project 
+            reflects my visual ethos of combining clean presentation with purposeful 
+            storytelling. 
+          </p>
+          <p class="paragraph">
+            The process began with research and planning. I identified 
+            key aspects to cover—build quality, ergonomics, responsiveness, and 
+            user experience—to ensure the review was structured and useful. I then 
+            scripted a rough outline to guide filming while allowing for a natural delivery. 
+            During production, I recorded both talking-head segments and close-up 
+            shots of the product to visually support my points. Capturing clear 
+            visuals was important to reinforce credibility and help viewers understand the features being discussed.
+            <br>
+            <br>
+            In post-production, I edited the footage to improve pacing and clarity. This included trimming unnecessary pauses, aligning visuals with spoken explanations, and adding simple text overlays to highlight key points. One major challenge was maintaining viewer engagement while presenting detailed information. Early cuts felt too slow and overly descriptive. I resolved this by tightening the edit, shortening clips, and ensuring that each visual directly supported what was being said. Another issue was achieving consistent lighting and color across shots, which I improved through basic color correction to create a more cohesive look.
+            The final video effectively communicates the strengths and limitations of the product while maintaining a clear and engaging flow. Through this process, I learned the importance of structuring information for clarity and using visuals intentionally to support spoken content. This project demonstrates my ability to analyze a product, organize information logically, and refine a piece through iteration to improve both style and communication.
+          </p>
+        </div>
       </section>
 
     </section>
