@@ -199,18 +199,14 @@ iframe {
   margin-bottom: 1.5rem;
 }
 
-.project-analysis {
+.project-analysis p {
   border-left: 4px solid #5890FF;
   border-radius: 0.5em;
   padding: 1.5em 2em;
   margin: 2em 0;
   box-shadow: 0 2px 16px 0 #10162288;
-  color: #cbe6ff;
   font-family: 'Overpass', sans-serif;
   position: relative;
-}
-
-.project-analysis p {
   margin-bottom: 1em;
 }
 
