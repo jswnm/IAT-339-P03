@@ -235,8 +235,7 @@ body {
 }
 
 .hero-home h1 {
-  margin: 0.8rem 0 1.4rem;
-  max-width: 8ch;
+  margin: 0.8rem 0 2rem;
 }
 
 .hero-text {
@@ -281,13 +280,11 @@ body {
 
 .hero-feature-card h2 {
   margin: 0.7rem 0 0.9rem;
-  max-width: 12ch;
 }
 
 .hero-feature-card p {
   margin: 0;
   color: var(--muted);
-  max-width: 34ch;
 }
 
 .hero-mini-grid {
@@ -371,6 +368,8 @@ body {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  justify-content: center;
+
 }
 
 /* INTRO */
