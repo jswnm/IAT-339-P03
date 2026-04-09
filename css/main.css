@@ -179,8 +179,7 @@ body {
 }
 
 /* BUTTONS */
-.button-primary,
-.button-secondary {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -192,31 +191,35 @@ body {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1;
-  transition: 0.25s ease;
-}
 
-.button-primary span,
-.button-secondary span {
-  position: relative;
-  top: 1.5px;
-  color: inherit;
-}
-
-.button-primary {
-  background: linear-gradient(180deg, var(--accent-light) 0%, var(--accent) 100%);
-  color: #08111f;
-  box-shadow: 0 10px 24px rgba(88, 144, 255, 0.28);
-}
-
-.button-secondary {
   border: 1px solid var(--line);
   color: var(--text);
   background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+
+  transition:
+    color 0.25s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
 }
 
-.button-primary:hover,
-.button-secondary:hover {
-  transform: translateY(-2px);
+.button span {
+  position: relative;
+  top: 2px;
+  color: inherit;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  color: #08111f;
+  box-shadow: 0 12px 28px rgba(88, 144, 255, 0.4);
+
+  border: 1px solid transparent;
+}
+
+.button:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(88, 144, 255, 0.25);
 }
 
 /* HOME HERO */
@@ -325,13 +328,10 @@ body {
 }
 
 .hero-link-card:hover {
-  transform: translateY(-4px);
+  transition: 0.25s ease;
   border-color: rgba(88, 144, 255, 0.28);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-}
-
-.accent-card {
   background: linear-gradient(180deg, rgba(88, 144, 255, 0.22), rgba(88, 144, 255, 0.08));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* VIDEO HERO */
@@ -598,6 +598,13 @@ body {
   overflow: hidden;
 }
 
+.analysis-item:hover {
+  transition: 0.25s ease;
+  border-color: rgba(88, 144, 255, 0.28);
+  background: linear-gradient(180deg, rgba(88, 144, 255, 0.22), rgba(88, 144, 255, 0.08));
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
 .analysis-item summary {
   list-style: none;
   cursor: pointer;
@@ -636,6 +643,7 @@ body {
 
 .analysis-item summary:hover {
   background: rgba(255, 255, 255, 0.03);
+  
 }
 
 .analysis-item p {
@@ -818,8 +826,7 @@ body {
     padding-right: 1.2rem;
   }
 
-  .button-primary,
-  .button-secondary {
+  .button-primary {
     width: 100%;
   }
 
