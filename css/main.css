@@ -32,6 +32,21 @@ body {
   overflow-x: hidden;
 }
 
+.bulleted-list {
+  list-style-type: disc;
+  padding-left: 2em;
+}
+
+.bulleted-list li {
+  margin-bottom: 0.4em;
+  position: relative;
+}
+
+.bulleted-list li::marker {
+  color: #5890FF;
+  font-size: 1.1em;
+}
+
 /* HEADER */
 .site-header {
   position: sticky;
@@ -171,7 +186,7 @@ body {
 .contact-hero {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 5rem 2rem 2rem;
+  padding: 0rem 2rem 2rem;
 }
 
 .section-heading {
@@ -397,7 +412,15 @@ body {
 
 .intro-main-card {
   border-radius: 1.7rem;
-  padding: 2rem;
+  padding: 0;
+  overflow: hidden;
+}
+
+.intro-main-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 .intro-main-card p {
@@ -630,36 +653,55 @@ body {
   content: "+";
   position: absolute;
   right: 1.2rem;
-  top: 53%;
-  transform: translateY(-50%);
+  top: 52%;
+  transform: translateY(-50%) rotate(0deg);
+  transform-origin: center;
   color: var(--accent);
   font-size: 1.2rem;
   font-weight: 600;
+  transition: transform 0.3s ease;
 }
 
 .analysis-item[open] summary::after {
-  content: "–";
+  transform: translateY(-50%) rotate(45deg);
 }
 
 .analysis-item summary:hover {
   background: rgba(255, 255, 255, 0.03);
-  
 }
 
-.analysis-item p {
+.analysis-content {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition:
+    height 0.4s ease,
+    opacity 0.25s ease;
+}
+
+.analysis-content p {
   margin: 0;
-  padding: 1.2rem 1.2rem 1.2rem;
+  padding: 0 1.2rem 1.2rem;
   border-left: none;
   border-radius: 0;
   background: transparent;
   box-shadow: none;
+  transform: translateY(-6px);
+  transition: transform 0.25s ease;
 }
 
-.compact-project .project-image {
-  width: 100%;
-  max-width: 100%;
-  margin: 0.1rem 0 0.1rem;
-  border-radius: 0.9rem;
+.analysis-content .project-image {
+  margin: 0.25rem 1.2rem 1.2rem;
+  width: calc(100% - 2.4rem);
+  max-width: calc(100% - 2.4rem);
+}
+
+.analysis-item[open] .analysis-content {
+  opacity: 1;
+}
+
+.analysis-item[open] .analysis-content p {
+  transform: translateY(0);
 }
 
 /* PAGE LOAD ANIMATIONS */
