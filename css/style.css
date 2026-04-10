@@ -192,8 +192,8 @@ pre {
   font-family: 'Overpass', sans-serif;
   font-weight: 300;
   font-size: 1rem;
-  line-height: 1.6;
-  width: 80%;
+  line-height: 1.8;
+  width: 100%;
 }
 
 .bulleted-list {
@@ -237,17 +237,24 @@ iframe {
   margin-bottom: 1.5rem;
 }
 
+/* wrapper to mimic portfolio sizing context */
+.project-preview-wrap {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
 .project-component {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 2rem;
+  gap: 1.25rem;
+  padding: 1.4rem;
   background-color: rgba(255, 255, 255, 0.035);
   border: 1px solid var(--line);
   border-radius: 1.5rem;
   box-shadow: var(--shadow);
-  margin: 1.5rem auto;
-  max-width: 80%;
+  width: min(100%, 39rem);
+  margin: 1.5rem 0;
 }
 
 .compact-project {
@@ -264,7 +271,7 @@ iframe {
 .compact-project .project-media iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 1rem;
+  border-radius: 0.9rem;
   border: none;
 }
 
@@ -369,8 +376,8 @@ iframe {
 }
 
 .analysis-content .numbered-list {
-  width: calc(100% - 2.4rem);
-  margin: 0 1.2rem 1rem;
+  width: auto;
+  margin: 0 1.2rem 1rem 2.6rem;
 }
 
 .analysis-content .project-image {
@@ -390,6 +397,7 @@ iframe {
 
 @media (max-width: 900px) {
   .project-component {
+    width: 100%;
     max-width: 100%;
   }
 }
@@ -459,4 +467,10 @@ iframe {
 
 #text {
   background-color: #FFFFFF;
+}
+
+.brand-font {
+  font-family: 'Audiowide', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 0.05em;
 }
