@@ -19,9 +19,7 @@
 
     <p>A template you can use to start building out your own style guides with.</p>
 
-
     <nav>
-      
       <p>
         Go to:
         <a href="index.html">Portfolio</a>,
@@ -31,60 +29,70 @@
         <a href="#branding">Brand Components</a>,
         <a href="#citations">Citation</a>
       </p>
-
     </nav>
-
-
 
     <!-- INTERACTIVE ELEMENTS SECTION // -->
     <section id="interactive_elements">
 
-      <!-- Default Button styling section -->
       <section>
-
         <h2>Navigation Button</h2>
 
         <h3>CSS selector:</h3>
-        <p>.button-nav</p>
+        <p>.main-nav a</p>
 
         <h3>Sample code:</h3>
-        <code>&lt;a href="#" class="button-nav"&gt;Navigation&lt;/a&gt;</code>
-        <pre><code>.button-nav {
-  color: #5890FF;
-  background: none;
-  border: none;
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  position: relative;
-  transition: color 0.3s ease;
-  cursor: pointer;
-  padding: 0;
+        <code>&lt;nav class="main-nav"&gt;
+  &lt;a href="#" class="active"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;Projects&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code>
+
+        <pre><code>.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
-.button-nav::after {
-  content: '';
+.main-nav a {
+  text-decoration: none;
+  color: var(--muted);
+  position: relative;
+  transition: 0.25s ease;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.main-nav a::after {
+  content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -0.35rem;
   width: 0;
   height: 2px;
-  background: #5890FF;
-  transition: width 0.3s ease;
+  background: var(--accent);
+  transition: 0.25s ease;
 }
 
-.button-nav:hover::after, .button-nav:focus::after {
-  width: 100%;
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--text);
 }
-</code></pre>
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+  width: 100%;
+}</code></pre>
 
         <h3 class="render">Rendered element:</h3>
-        <a class="button-nav" href="#">Navigation</a>
-
+        <nav class="main-nav">
+          <a href="#" class="active">Home</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
+        </nav>
       </section>
 
       <section>
-
         <h2>In-text link</h2>
 
         <h3>CSS selector:</h3>
@@ -107,34 +115,57 @@
 
         <h3 class="render">Rendered element:</h3>
         <a class="link" href="#">In-text link</a>
-
       </section>
 
       <section>
-
-        <h2>Submit/Reset Buttons</h2>
+        <h2>Button</h2>
 
         <h3>CSS selector:</h3>
-        <p>.button-submit</p>
+        <p>.button</p>
 
         <h3>Sample code:</h3>
-        <code>&lt;button type="submit" class="button-submit"&gt;Submit&lt;/button&gt;</code>
-        <pre><code>.button-submit {
-  background-color: #5890FF;
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+        <code>&lt;a href="#" class="button"&gt;&lt;span&gt;Visit Channel&lt;/span&gt;&lt;/a&gt;</code>
+        <pre><code>.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 150px;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-family: 'Overpass', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: none;
+  transition:
+    color 0.25s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
 }
 
-.button-submit:hover, .button-submit:focus {
-  background-color: #7AB0FF;
+.button span {
+  position: relative;
+  top: 1.5px;
+  color: inherit;
+}
+
+.button:hover {
+  background: linear-gradient(90deg, var(--accent-light), var(--accent));
+  color: #08111f;
+  box-shadow: 0 12px 28px rgba(88, 144, 255, 0.4);
+  border: 1px solid transparent;
+}
+
+.button:active {
+  box-shadow: 0 6px 14px rgba(88, 144, 255, 0.25);
 }</code></pre>
 
         <h3 class="render">Rendered element:</h3>
-        <button class="button-submit" type="submit">Submit</button>
+        <a class="button" href="#"><span>Visit Channel</span></a>
       </section>
 
       <section>
@@ -165,8 +196,6 @@
 
     </section>
     <!-- // INTERACTIVE ELEMENTS SECTION -->
-
-
 
     <!-- TEXT ELEMENTS SECTION // -->
     <section id="text_elements">
@@ -283,24 +312,18 @@
     </section>
     <!-- // TEXT ELEMENTS SECTION -->
 
-
-
     <!-- COMBINED ELEMENTS SECTION // -->
     <section id="combined_elements">
 
       <section>
         <h2>Main Navigation</h2>
-
-        <!-- Navbar preview -->
-        <nav>
-          <a class="button-nav" href="#">Home</a>
-          <a class="button-nav" href="#">Projects</a>
-          <a class="button-nav" href="#">About</a>
-          <a class="button-nav" href="#">Links</a>
+        <nav class="main-nav">
+          <a href="#" class="active">Home</a>
+          <a href="#">Projects</a>
+          <a href="#">Contact</a>
         </nav>
       </section>
 
-      <!-- Bio -->
       <section id="bio">
         <h2>About Me</h2>
         <p class="paragraph">
@@ -317,7 +340,7 @@
       <section>
         <h2>Project Component</h2>
 
-        <div class="project-component">
+        <div class="project-component compact-project">
           <div class="project-media">
             <iframe 
               src="https://www.youtube.com/embed/zpQeYUnSdfw?si=NY6Y3e7A58x7otJI" 
@@ -330,64 +353,96 @@
 
           <div class="project-text">
             <h2 class="h2">Logitech X2 Superstrike Review</h2>
-            <h3 class="h3">Project Analysis</h3>
+            <h3 class="h3">Video Review for YouTube</h3>
 
-            <div class="project-analysis">
-              <p class="paragraph">
-                <strong>Describe the project:</strong>
-                This project is a YouTube review of the Logitech X2 Superstrike, 
-                focused on evaluating its performance, design, and overall value for users. 
-                The goal was to create an informative yet engaging video that balances 
-                technical analysis with clear, accessible communication. This project 
-                reflects my visual ethos of combining clean presentation with purposeful 
-                storytelling. 
-              </p>
+            <div class="project-analysis dropdown-analysis">
+              <details class="analysis-item">
+                <summary><span>Project Description</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    This project is a YouTube review of the Logitech X2 Superstrike, 
+                    focused on evaluating its performance, design, and overall value for users. 
+                    The goal was to create an informative yet engaging video that balances 
+                    technical analysis with clear, accessible communication. This project 
+                    reflects my visual ethos of combining clean presentation with purposeful 
+                    storytelling.
+                  </p>
+                </div>
+              </details>
 
-              <p class="paragraph">
-                <strong>Analyze and explain the project:</strong>
-                The process began with research and planning. I identified 
-                key aspects to cover build quality, ergonomics, responsiveness, and 
-                user experience, to ensure the review was structured and useful. I then 
-                scripted a rough outline to guide filming while allowing for a natural delivery. 
-                During production, I recorded both talking-head segments and close-up 
-                shots of the product to visually support my points. Capturing clear 
-                visuals was important to reinforce credibility and help viewers understand the features being discussed.
-              </p>
+              <details class="analysis-item">
+                <summary><span>Creating the project</span></summary>
+                <div class="analysis-content">
+                  <ol class="numbered-list paragraph">
+                    <li>
+                      <strong>Research & Planning:</strong>
+                      I began by researching the Logitech G Pro X Superstrike and identifying key aspects to evaluate, including build quality, ergonomics, responsiveness, and overall user experience.
+                    </li>
+                    <li>
+                      <strong>Structuring the Review:</strong>
+                      I organized these points into a clear structure to ensure the video would be informative, focused, and easy for viewers to follow.
+                    </li>
+                    <li>
+                      <strong>Scripting the Outline:</strong>
+                      I created a rough script to guide filming while still allowing for a natural and conversational delivery.
+                    </li>
+                  </ol>
 
-              <p class="paragraph">
-                <strong>Identify problems and resolutions:</strong>
-                In post-production, I edited the footage to improve pacing and clarity. 
-                This included trimming unnecessary pauses, aligning visuals with 
-                spoken explanations, and adding simple text overlays to highlight 
-                key points. One major challenge was maintaining viewer engagement 
-                while presenting detailed information. Early cuts felt too slow and 
-                overly descriptive. I resolved this by tightening the edit, 
-                shortening clips, and ensuring that each visual directly supported 
-                what was being said. Another issue was achieving consistent lighting 
-                and color across shots, which I improved through basic color 
-                correction to create a more cohesive look.
-              </p>
-              <img src="img/project1process.png" alt="Project process" class="project-image">
+                  <img src="img/superstrike script.png" alt="Script for my Superstrike Video" class="project-image">
 
+                  <ol class="numbered-list paragraph" start="4">
+                    <li>
+                      <strong>Filming Content:</strong>
+                      I recorded both overhead footage and close-up shots of the mouse to clearly demonstrate its design, features, and performance.
+                    </li>
+                  </ol>
 
-              <p class="paragraph">
-                <strong>Evaluate the effectiveness:</strong>
-                The final video effectively communicates the strengths and 
-                limitations of the product while maintaining a clear and engaging flow. 
-                Through this process, I learned the importance of structuring information for 
-                clarity and using visuals intentionally to support spoken content. 
-                This project demonstrates my ability to analyze a product, organize 
-                information logically, and refine a piece through iteration to 
-                improve both style and communication.
-              </p>
+                  <img src="img/camerasetup.jpg" alt="My recording setup" class="project-image">
+
+                  <ol class="numbered-list paragraph" start="5">
+                    <li>
+                      <strong>Post-production:</strong>
+                      I focused on capturing clean, detailed visuals to reinforce credibility and help viewers better understand the product being reviewed, so that during post-production I could trim unnecessary footage and add edits to make the video more engaging.
+                    </li>
+                  </ol>
+
+                  <img src="img/project1process.png" alt="Project process" class="project-image">
+                </div>
+              </details>
+
+              <details class="analysis-item">
+                <summary><span>Challenges I faced</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    In post-production, I edited the footage to improve pacing and clarity. 
+                    This included trimming unnecessary pauses, aligning visuals with 
+                    spoken explanations, and adding simple text overlays to highlight 
+                    key points. One major challenge was maintaining viewer engagement 
+                    while presenting detailed information.
+                  </p>
+                </div>
+              </details>
+
+              <details class="analysis-item">
+                <summary><span>Conclusion</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    The final video effectively communicates the strengths and 
+                    limitations of the product while maintaining a clear and engaging flow. 
+                    Through this process, I learned the importance of structuring information for 
+                    clarity and using visuals intentionally to support spoken content.
+                  </p>
+                </div>
+              </details>
             </div>
           </div>
         </div>
       </section>
+
       <section>
         <h2>Project Component</h2>
 
-        <div class="project-component">
+        <div class="project-component compact-project">
           <div class="project-media">
             <iframe 
               src="https://www.youtube.com/embed/ZZy8jsAAMZs?si=fYlfB6qeCcK_YQMg" 
@@ -398,47 +453,78 @@
 
           <div class="project-text">
             <h2 class="h2">IAT 202 Short Film</h2>
-            <h3 class="h3">Project Analysis</h3>
+            <h3 class="h3">Short Film Project for IAT 202</h3>
 
-            <div class="project-analysis">
+            <div class="project-analysis dropdown-analysis">
+              <details class="analysis-item">
+                <summary><span>Project Description</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    This project is a short film created for IAT 202, focused on visual storytelling through
+                    cinematography, editing, and narrative structure.
+                  </p>
+                </div>
+              </details>
 
-              <p class="paragraph">
-                <strong>Describe the project:</strong>
-                This project is a short film created for IAT 202, focused on visual storytelling through
-                cinematography, editing, and narrative structure. The goal was to produce a cohesive and 
-                engaging film using limited resources while demonstrating an understanding of film techniques 
-                such as shot composition, pacing, and continuity.
-              </p>
+              <details class="analysis-item">
+                <summary><span>Creating the project</span></summary>
+                <div class="analysis-content">
+                  <ol class="numbered-list paragraph">
+                    <li>
+                      <strong>Concept Development & Planning:</strong>
+                      I developed a basic narrative idea and created a storyboard to guide the overall direction of the film.
+                    </li>
+                  </ol>
 
-              <p class="paragraph">
-                <strong>Analyze and explain the project:</strong>
-                The project began with concept development and planning, where I created a basic narrative 
-                idea and storyboard to guide production. Filming involved capturing multiple shots from different 
-                angles to ensure flexibility during editing. I focused on framing, camera movement, and lighting to 
-                support the tone of the story. During post-production, I edited the footage to create a clear sequence, 
-                ensuring that each shot contributed to the overall narrative flow and visual coherence.
-              </p>
+                  <img src="img/grave.png" alt="Me holding a grave that I made" class="project-image">
 
-              <p class="paragraph">
-                <strong>Identify problems and resolutions:</strong>
-                One major challenge was maintaining continuity between shots, as changes in lighting and camera 
-                positioning created inconsistencies. I addressed this by carefully selecting clips and adjusting 
-                cuts to make transitions feel more natural. Another issue was pacing, where early edits felt either 
-                too slow or rushed. I resolved this by refining the timing of cuts and removing unnecessary footage 
-                to create a smoother and more engaging flow.
-              </p>
-              <img src="img/project2process.png" alt="Project process" class="project-image">
+                  <ol class="numbered-list paragraph" start="2">
+                    <li>
+                      <strong>Shot Planning:</strong>
+                      I planned key scenes and camera angles in advance to ensure I had enough coverage for flexibility during editing.
+                    </li>
+                  </ol>
 
+                  <img src="img/project2process.png" alt="Testing wide angle shots of a dinner table" class="project-image">
 
-              <p class="paragraph">
-                <strong>Evaluate the effectiveness:</strong>
-                The final film successfully communicates a clear narrative while demonstrating an understanding of 
-                fundamental filmmaking techniques. Through this project, I learned the importance of planning shots 
-                in advance, maintaining visual consistency, and editing with intention. This experience improved my 
-                ability to think critically about storytelling and strengthened my skills in both production and 
-                post-production workflows.
-              </p>
+                  <ol class="numbered-list paragraph" start="3">
+                    <li>
+                      <strong>Filming & Production:</strong>
+                      I captured multiple shots from different angles, focusing on framing, camera movement, and lighting to support the tone of the story.
+                    </li>
+                    <li>
+                      <strong>Post-Production Editing:</strong>
+                      I edited the footage into a clear sequence, selecting the strongest clips and arranging them to create a smooth narrative flow.
+                    </li>
+                    <li>
+                      <strong>Refinement & Continuity:</strong>
+                      I ensured that each shot contributed to visual coherence, refining transitions and pacing to improve the overall storytelling.
+                    </li>
+                  </ol>
 
+                  <img src="img/pendantedit.png" alt="Screenshot of the editing process" class="project-image">
+                </div>
+              </details>
+
+              <details class="analysis-item">
+                <summary><span>Challenges I faced</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    One major challenge was maintaining continuity between shots, as changes in lighting and camera 
+                    positioning created inconsistencies.
+                  </p>
+                </div>
+              </details>
+
+              <details class="analysis-item">
+                <summary><span>Conclusion</span></summary>
+                <div class="analysis-content">
+                  <p class="paragraph">
+                    The final film successfully communicates a clear narrative while demonstrating an understanding of 
+                    fundamental filmmaking techniques.
+                  </p>
+                </div>
+              </details>
             </div>
           </div>
         </div>
@@ -455,9 +541,7 @@
     </section>
     <!-- // COMBINED ELEMENTS SECTION -->
 
-    <!-- BRANDING SECTION // -->
     <section id="branding">
-
       <section>
         <h1>Brand Components</h1>
         <h2>Typeface</h2>
@@ -496,45 +580,40 @@
           </div>
         </div>
       </section>
-
     </section>
-    <!-- // BRANDING SECTION -->
 
-    <!-- CITATIONS SECTION // -->
-      <section id="citations">
+    <section id="citations">
+      <section>
+        <h2>Citations</h2>
 
-        <section>
-          <h2>Citations</h2>
+        <h3>Color References</h3>
+        <p class="paragraph">
+          Color palette inspired by modern dark UI systems and accessibility standards.
+          References include:
+          <a class="link" href="https://material.io/design/color" target="_blank">
+            https://material.io/design/color
+          </a>,
+          <a class="link" href="https://coolors.co/" target="_blank">
+            https://coolors.co/
+          </a>.
+        </p>
 
-          <h3>Color References</h3>
-          <p class="paragraph">
-            Color palette inspired by modern dark UI systems and accessibility standards.
-            References include:
-            <a class="link" href="https://material.io/design/color" target="_blank">
-              https://material.io/design/color
-            </a>,
-            <a class="link" href="https://coolors.co/" target="_blank">
-              https://coolors.co/
-            </a>.
-          </p>
+        <h3>My Project</h3>
+        <p class="paragraph">
+          <a class="link" href="https://youtu.be/zpQeYUnSdfw?si=Cyt9jLYrx30_V4kA" target="_blank">
+            https://youtu.be/zpQeYUnSdfw?si=Cyt9jLYrx30_V4kA
+          </a>
+        </p>
 
-          <h3>My Project</h3>
-          <p class="paragraph">
-            <a class="link" href="https://youtu.be/zpQeYUnSdfw?si=Cyt9jLYrx30_V4kA" target="_blank">
-              https://youtu.be/zpQeYUnSdfw?si=Cyt9jLYrx30_V4kA
-            </a>
-          </p>
-
-          <h3>Typography</h3>
-          <p class="paragraph">
-            Typeface used: Overpass, sourced from
-            <a class="link" href="https://fonts.google.com/specimen/Overpass" target="_blank">
-              https://fonts.google.com/specimen/Overpass
-            </a>.
-          </p>
-
-        </section>
-
+        <h3>Typography</h3>
+        <p class="paragraph">
+          Typeface used: Overpass, sourced from
+          <a class="link" href="https://fonts.google.com/specimen/Overpass" target="_blank">
+            https://fonts.google.com/specimen/Overpass
+          </a>.
+        </p>
       </section>
+    </section>
+
   </body>
 </html>
